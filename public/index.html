@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Background Remover</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            <div class="logo-icon">
+                ✦
+            </div>
+
+            <div>
+                <h1>Background Remover</h1>
+                <p>AI-powered image background removal</p>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <!-- UPLOAD AREA -->
+
+        <section
+            class="upload-section"
+            id="uploadSection"
+        >
+
+            <div
+                class="drop-zone"
+                id="dropZone"
+            >
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <h2>Drop your image here</h2>
+
+                <p>
+                    or click to browse from your computer
+                </p>
+
+                <button
+                    class="browse-button"
+                    id="browseButton"
+                >
+                    Choose Image
+                </button>
+
+                <div class="formats">
+                    JPG · PNG · WEBP
+                    <span>•</span>
+                    Max 50 MB
+                </div>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept="image/jpeg,image/png,image/webp"
+                    hidden
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESSING -->
+
+        <section
+            class="processing-section hidden"
+            id="processingSection"
+        >
+
+            <div class="loader"></div>
+
+            <h2>Removing background...</h2>
+
+            <p>
+                AI is processing your image locally.
+            </p>
+
+            <div class="progress-track">
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                ></div>
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section
+            class="result-section hidden"
+            id="resultSection"
+        >
+
+            <div class="result-header">
+
+                <div>
+                    <h2>Result</h2>
+
+                    <p id="resultInfo">
+                        Background removed successfully
+                    </p>
+                </div>
+
+                <button
+                    class="new-button"
+                    id="newButton"
+                >
+                    + New Image
+                </button>
+
+            </div>
+
+
+            <div class="comparison">
+
+                <!-- ORIGINAL -->
+
+                <div class="image-card">
+
+                    <div class="card-title">
+                        Original
+                    </div>
+
+                    <div class="image-container">
+                        <img
+                            id="originalPreview"
+                            alt="Original image"
+                        >
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT -->
+
+                <div class="image-card">
+
+                    <div class="card-title">
+                        Background Removed
+                    </div>
+
+                    <div class="image-container checkerboard">
+
+                        <img
+                            id="resultPreview"
+                            alt="Background removed image"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-actions">
+
+                <a
+                    id="downloadButton"
+                    class="download-button"
+                    download
+                >
+                    ↓ Download PNG
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ERROR -->
+
+        <div
+            class="error-box hidden"
+            id="errorBox"
+        ></div>
+
+    </main>
+
+
+    <footer>
+        Images are processed locally on your computer.
+    </footer>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
